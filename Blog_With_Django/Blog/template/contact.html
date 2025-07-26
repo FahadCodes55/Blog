@@ -1,0 +1,511 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Get in touch with us. We'd love to hear from you about our moral stories and how they've impacted your life." />
+        <meta name="author" content="" />
+        <title>Contact Us - Moral Stories</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">Moral Stories</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page header-->
+        <header class="py-5 bg-light border-bottom mb-4">
+            <div class="container">
+                <div class="text-center my-5">
+                    <h1 class="fw-bolder">Contact Us</h1>
+                    <p class="lead mb-0">We'd love to hear from you. Share your thoughts, stories, or suggestions!</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page content-->
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <!-- Contact Form -->
+                    <div class="col-lg-8">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h3 class="mb-0" style="color:white;">Send Us a Message</h3>
+                            </div>
+                            <div class="card-body">
+                                <form id="contactForm" method="post" action="#">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="firstName" class="form-label">First Name *</label>
+                                                <input type="text" class="form-control" id="firstName" name="first_name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group mb-3">
+                                                <label for="lastName" class="form-label">Last Name *</label>
+                                                <input type="text" class="form-control" id="lastName" name="last_name" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="subject" class="form-label">Subject *</label>
+                                        <select class="form-control" id="subject" name="subject" required>
+                                            <option value="">Choose a subject...</option>
+                                            <option value="general">General Inquiry</option>
+                                            <option value="story_submission">Story Submission</option>
+                                            <option value="feedback">Feedback</option>
+                                            <option value="suggestion">Suggestion</option>
+                                            <option value="collaboration">Collaboration</option>
+                                            <option value="technical">Technical Issue</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="message" class="form-label">Message *</label>
+                                        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Tell us what's on your mind..." required></textarea>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                            <label class="form-check-label" for="newsletter">
+                                                Subscribe to our newsletter for new story updates
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Section -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h3 class="mb-0">Frequently Asked Questions</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="faq-item">
+                                    <h5>How can I submit my own moral story?</h5>
+                                    <p>We welcome story submissions! Please use the contact form above with "Story Submission" as the subject, and include your story in the message. We review all submissions carefully.</p>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h5>Can I use your stories for educational purposes?</h5>
+                                    <p>Yes! Our stories are perfect for educational use. Teachers, parents, and educators are encouraged to share these stories to promote moral values and character development.</p>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h5>How often do you publish new stories?</h5>
+                                    <p>We aim to publish new moral stories weekly. Subscribe to our newsletter to get notified when new content is available.</p>
+                                </div>
+
+                                <div class="faq-item">
+                                    <h5>Are your stories suitable for children?</h5>
+                                    <p>Most of our stories are family-friendly and suitable for children aged 8 and above. We clearly mark any content that might be more appropriate for older readers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Contact Information -->
+                        <div class="card mb-4">
+                            <div class="card-header">Get In Touch</div>
+                            <div class="card-body">
+                                <div class="contact-info">
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6>Email</h6>
+                                            <p>hello@moralstories.com</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6>Phone</h6>
+                                            <p>+1 (555) 123-4567</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6>Address</h6>
+                                            <p>123 Story Lane<br>Wisdom City, WC 12345</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h6>Response Time</h6>
+                                            <p>Within 24 hours</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="card mb-4">
+                            <div class="card-header">Follow Us</div>
+                            <div class="card-body">
+                                <div class="social-links">
+                                    <a href="#" class="social-link facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="#" class="social-link twitter">
+                                        <i class="fab fa-twitter"></i>
+                                        <span>Twitter</span>
+                                    </a>
+                                    <a href="#" class="social-link instagram">
+                                        <i class="fab fa-instagram"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a href="#" class="social-link youtube">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>YouTube</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Newsletter -->
+                        <div class="card mb-4">
+                            <div class="card-header">Newsletter</div>
+                            <div class="card-body">
+                                <p>Stay updated with our latest moral stories and wisdom.</p>
+                                <div class="newsletter-form">
+                                    <input type="email" class="form-control mb-2" placeholder="Your email address">
+                                    <button class="btn btn-primary w-100">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Moral Stories 2025</p>
+            </div>
+        </footer>
+
+        <!-- Font Awesome for Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <!-- JavaScript for Mobile Toggle -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function() {
+                    const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+
+                    if (isExpanded) {
+                        navbarCollapse.classList.remove('show');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    } else {
+                        navbarCollapse.classList.add('show');
+                        navbarToggler.setAttribute('aria-expanded', 'true');
+                    }
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navbarToggler.contains(event.target) || navbarCollapse.contains(event.target);
+
+                    if (!isClickInsideNav && navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Close menu when clicking on nav links
+                const navLinks = navbarCollapse.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navbarCollapse.classList.remove('show');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Add your form submission logic here
+                    alert('Thank you for your message! We will get back to you soon.');
+                });
+            }
+        });
+        </script>
+
+        <!-- Additional CSS for Contact Page -->
+        <style>
+        .form-control {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+            outline: none;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #2c5aa0 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h6 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p {
+            color: #4a5568;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-link.facebook {
+            color: #1877f2;
+            background: rgba(24, 119, 242, 0.1);
+        }
+
+        .social-link.facebook:hover {
+            background: #1877f2;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-link.twitter {
+            color: #1da1f2;
+            background: rgba(29, 161, 242, 0.1);
+        }
+
+        .social-link.twitter:hover {
+            background: #1da1f2;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-link.instagram {
+            color: #e4405f;
+            background: rgba(228, 64, 95, 0.1);
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-link.youtube {
+            color: #ff0000;
+            background: rgba(255, 0, 0, 0.1);
+        }
+
+        .social-link.youtube:hover {
+            background: #ff0000;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-link i {
+            font-size: 1.25rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .newsletter-form input {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .faq-item h5 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .form-check-input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(49, 130, 206, 0.25);
+        }
+
+        .form-check-label {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        select.form-control {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 12px center;
+            background-repeat: no-repeat;
+            background-size: 16px 12px;
+            padding-right: 40px;
+            appearance: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+
+            .contact-icon {
+                align-self: center;
+            }
+
+            .social-links {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .social-link {
+                justify-content: center;
+                padding: 0.5rem;
+            }
+
+            .social-link span {
+                display: none;
+            }
+
+            .social-link i {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .social-links {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        </style>
+    </body>
+</html>

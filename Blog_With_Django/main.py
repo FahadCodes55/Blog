@@ -1,0 +1,1 @@
+print('Blog with Django')
